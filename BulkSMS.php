@@ -49,7 +49,6 @@ class BulkSMS {
 
 		$this->_api_url  = BulkSMS::BASE_URL;
         $this->_api_key  = $args['api_key'];
-        $this->_password = $args['password'];
         $this->_senderId = $args['senderId'];
 
 	}
@@ -59,7 +58,7 @@ class BulkSMS {
 		$account = new stdClass;
 		$account->url = array(BulkSMS::BALANCE_CHECK_URL);
 		$account->params = array(
-            'workingkey' => $this->_username
+            'workingkey' => $this->_api_key
         );
 		return $this->api( $this->buildURL($account) );
 	}    
