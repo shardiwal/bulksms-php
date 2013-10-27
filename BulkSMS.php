@@ -15,7 +15,7 @@ class BulkSMS {
     /**
      * Some URL constants
      */
-    const BASE_URL              = 'http://ht.bulksms-service.com/api/';
+    const BASE_URL              = 'http://ht.bulksms-service.com/api';
     const SMS_URL               = '/web2sms.php';
     const DELIVERY_STATUS_URL   = '/status.php';
     const BALANCE_CHECK_URL     = '/credits.php';
@@ -69,8 +69,8 @@ class BulkSMS {
         $sms->url = array(BulkSMS::SMS_URL);
         $sms->params = array(
             'workingkey'    => $this->_api_key,
-            'sender'        => $this->senderId,
-            'message'       => $message,
+            'sender'        => $this->_senderId,
+            'message'       => urlencode($message),
             'to'            => $mobile_no
         );
         return $this->api( $this->buildURL($sms) );

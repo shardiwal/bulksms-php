@@ -9,6 +9,9 @@ PHP implementation of BulkSMS Service - Client
 
 Service Provider http://bulksms-service.com
 
+PHP CURL is required to installed
+sudo apt-get install php5-curl
+
 <code>
     <?php
     
